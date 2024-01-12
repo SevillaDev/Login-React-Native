@@ -1,21 +1,25 @@
 import React from "react";
 import { Text ,StyleSheet, View, TextInput , Tex, Image, TouchableOpacity } from "react-native";
 
+
+
+
+
 export default function ContenedorInput ({ navigation }){
     return (
    <View style={styl.container} >
-    <View><Image style={styl.Imagen} source={require('../assets/img/Logopr.png')}></Image></View>
+    <View><Image style={styl.Imagen} source={require('../assets/img/LogoPr.png')}></Image></View>
     <View style={styl.Container_dos}>
-      <TextInput style={styl.InputTex} placeholder="Usuario"></TextInput>
-      <TextInput style={styl.InputTex} placeholder="Contraseña" secureTextEntry = 'true'></TextInput>
+      <TextInput style={styl.InputTex} placeholder="Usuario" ></TextInput>
+      <TextInput style={styl.InputTex} placeholder="Contraseña"  ></TextInput>
       <View style={styl.Container_tres} >
         <Text style={styl.Font_dos}>Olvidaste tu contraseña?</Text>
       </View>
-      <TouchableOpacity style={styl.Btn}>
-        <Text style={styl.Font}  onPress={() => navigation.navigate('secon')}>Login</Text>
+      <TouchableOpacity style={styl.Btn}  onPress={() => navigation.navigate('home')}>
+        <Text style={styl.Font} >Login</Text>
       </TouchableOpacity >
       <View style={styl.Container_cuatro} >
-        <Text style={styl.Font_dos} onPress={() => navigation.navigate('secon')}>Aun no tienes una cuenta?</Text>
+        <Text style={styl.Font_dos} onPress={() => navigation.navigate('Sing')}>Aun no tienes una cuenta?</Text>
       </View>
     </View> 
    </View> 

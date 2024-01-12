@@ -1,21 +1,68 @@
 import React from "react";
-import { Text ,StyleSheet, View, TextInput , Tex, Image, TouchableOpacity } from "react-native";
+import { Text ,StyleSheet, View, TextInput , Tex, Image, TouchableOpacity, ScrollView } from "react-native";
 
 export default function Contenedor ({ navigation }){
     return (
+      <ScrollView>
    <View style={styl.container} >
-    <View><Image style={styl.Imagen} source={require('../assets/img/Logopr.png')}></Image></View>
-    <View style={styl.Container_dos}>
-      <TextInput style={styl.InputTex} placeholder="Usuario"></TextInput>
-      <TextInput style={styl.InputTex} placeholder="Mail"></TextInput>
-      <TextInput style={styl.InputTex} placeholder="Contraseña" secureTextEntry = 'true'></TextInput>
-      <TextInput style={styl.InputTex} placeholder="Repetir Contraseña" secureTextEntry = 'true'></TextInput>
-      <TouchableOpacity style={styl.Btn}>
-        <Text style={styl.Font}  onPress={() => navigation.navigate('secon')}>Sing up</Text>
+
+     <View style={styl.container_texto} >
+      <Text style={{fontSize : 17, paddingLeft : 6}}>Queremos conocer mas acerca de ti</Text>
+     </View>
+
+     <View style={styl.container_input} >
+     <View style={styl.container_Iunpt_texto} >
+      <Text style={styl.Font_dos}>Nombres :</Text>
+     </View>
+     <View style={styl.container_Iunpt} >
+      <TextInput style={styl.InputTex}></TextInput>
+     </View>
+     </View>
+
+
+     <View style={styl.container_input} >
+     <View style={styl.container_Iunpt_texto} >
+      <Text style={styl.Font_dos}>Apellidos :</Text>
+     </View>
+     <View style={styl.container_Iunpt} >
+      <TextInput style={styl.InputTex}></TextInput>
+     </View>
+     </View>
+
+     <View style={styl.container_input} >
+     <View style={styl.container_Iunpt_texto} >
+      <Text style={styl.Font_dos}>Correo Electronico :</Text>
+     </View>
+     <View style={styl.container_Iunpt} >
+      <TextInput style={styl.InputTex}></TextInput>
+     </View>
+     </View>
+
+
+     <View style={styl.container_input} >
+     <View style={styl.container_Iunpt_texto} >
+      <Text style={styl.Font_dos}>Contraseña :</Text>
+     </View>
+     <View style={styl.container_Iunpt} >
+      <TextInput style={styl.InputTex}></TextInput>
+     </View>
+     </View>
+
+     <View style={styl.container_input} >
+     <View style={styl.container_Iunpt} >
+     <TouchableOpacity style={styl.Btn}  onPress={() => navigation.navigate('home')}>
+        <Text style={styl.Font} >Sing up</Text>
       </TouchableOpacity >
-    </View> 
+     </View>
+     </View>
+
+     
+    
+    
+    
+   
    </View> 
- 
+   </ScrollView>
     );
 }
 
@@ -23,36 +70,37 @@ const styl = StyleSheet.create({
   container: {
     backgroundColor: 'white',
     width : '100%',
-    height: '50%',
-    alignItems : 'center',alignContent : "center",
-    justifyContent : 'center' 
+    height: '90%',
+ // backgroundColor : 'blue'
    
-  },Container_dos:{
+  },container_texto: {
+    backgroundColor: 'white',
     width : '100%',
-    height: 300,
-    alignItems : 'center', textAlign : 'right'
-  },InputTex:{
-    height : 55 , width : '80%', borderWidth : 1, marginTop : 14, borderRadius : 4 , paddingLeft : 10,
+    height: 40, marginTop : 20 , justifyContent : 'center' , marginBottom : 20
+  },container_input: {
+   // backgroundColor: 'red',
+    width : '100%',
+    height: 105,
+  }, container_Iunpt_texto: {
+   // backgroundColor: 'yellow',
+    width : '100%',
+    height: 20,
+  },container_Iunpt: {
+   // backgroundColor: 'green',
+    width : '100%',
+    height: 80, alignItems : 'center' , justifyContent : 'center'
+  }, InputTex:{
+    height : 55 , width : '80%', borderWidth : 1,
+     borderRadius : 4 , paddingLeft : 10,
     fontSize : 20 , borderColor : 'gray', color : 'gray'
-  },Btn:{
-    height : 50 , width : '80%', borderWidth : 1, marginTop : 14 ,
-     alignItems : 'center' , textAlign : 'center', alignContent : "center",
-      justifyContent : 'center' , borderRadius : 4 , backgroundColor : '#7F00F5'
-  },Font:{
-    fontSize : 20, fontWeight : 'bold' , color : 'white'
   },Font_dos:{
-    fontSize : 17 , color : 'gray'
-  },Font_tres:{
-    fontSize : 17 , color : '#7F00F5' , marginLeft : 10
+    fontSize : 17 , color : 'gray', paddingLeft : 35
   }
-  ,Container_tres:{
-    height : 40 , width : '80%' , justifyContent : 'flex-end'
-   ,alignItems: 'flex-end'
-  },Container_cuatro:{
-    height : 40 , width : '80%'  , marginTop : 10 ,alignItems : 'center'
-   
-  },Imagen: {
-    height : 200 , width : 200 , marginTop : -120 , marginBottom : 20
-  }
-  
+    ,Btn:{
+      height : 50 , width : '80%', borderWidth : 1, marginTop : 14 ,
+       alignItems : 'center' , textAlign : 'center', alignContent : "center",
+        justifyContent : 'center' , borderRadius : 4 , backgroundColor : '#7F00F5'
+    },Font:{
+      fontSize : 20, fontWeight : 'bold' , color : 'white'
+    }
 });
